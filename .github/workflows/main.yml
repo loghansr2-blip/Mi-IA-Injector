@@ -19,7 +19,7 @@ jobs:
 
       - name: Build with Gradle
         # Usamos 'gradle' directamente en lugar de './gradlew' para evitar errores de archivo
-        run: gradle assembleDebug
+        run: gradle assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
