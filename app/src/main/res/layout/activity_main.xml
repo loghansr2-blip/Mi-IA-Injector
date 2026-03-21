@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText android:id="@+id/editSSH" android:layout_width="match_parent" 
+        android:layout_height="wrap_content" android:hint="Servidor SSH (IP)"/>
+    
+    <EditText android:id="@+id/editPayload" android:layout_width="match_parent" 
+        android:layout_height="100dp" android:hint="Escribe tu Payload aquí"
+        android:gravity="top"/>
+
+    <CheckBox android:id="@+id/checkProxy" android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" android:text="Usar Proxy Remoto"/>
+
+    <Button android:id="@+id/btnConnect" android:layout_width="match_parent" 
+        android:layout_height="wrap_content" android:text="CONECTAR" 
+        android:backgroundTint="#2196F3" android:textColor="#FFFFFF"/>
+</LinearLayout>
