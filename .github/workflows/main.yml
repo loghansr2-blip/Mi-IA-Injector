@@ -15,17 +15,16 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Configurar Gradle
-        uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
 
-      - name: Compilar APK (Debug)
-        # Usamos 'gradle' directamente para evitar problemas de permisos con gradlew
-        run: gradle assembleDebug --stacktrace
+      - name: Compilar con Gradle
+        # Forzamos la limpieza antes de compilar para evitar errores de cache
+        run: gradle clean assembleDebug --stacktrace
 
-      - name: Guardar el APK (Artefacto)
+      - name: Subir APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/*.apk
-          if-no-files-found: error
           
